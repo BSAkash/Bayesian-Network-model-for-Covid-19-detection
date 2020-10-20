@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="10000" discsamples="10000">
+	<nodes>
+		<cpt id="Officer_name">
+			<state id="true" />
+			<state id="false" />
+			<probabilities>0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="View_Officer_name">
+			<state id="true" />
+			<state id="false" />
+			<parents>Officer_name</parents>
+			<probabilities>0.15 0.85 0 1</probabilities>
+		</cpt>
+		<cpt id="Status_health_name">
+			<state id="true" />
+			<state id="false" />
+			<parents>Officer_name</parents>
+			<probabilities>0.7 0.3 0.3 0.7</probabilities>
+		</cpt>
+		<cpt id="Infected_name">
+			<state id="true" />
+			<state id="false" />
+			<probabilities>0.25 0.75</probabilities>
+		</cpt>
+		<cpt id="Quarantine_Person_name">
+			<state id="true" />
+			<state id="false" />
+			<parents>Officer_name Infected_name</parents>
+			<probabilities>0.6 0.4 0 1 0 1 0 1</probabilities>
+		</cpt>
+		<cpt id="Fly_in_Person_name">
+			<state id="true" />
+			<state id="false" />
+			<parents>Status_health_name Quarantine_Person_name Infected_name</parents>
+			<probabilities>0 1 0 1 0.6 0.4 0.2 0.8 0 1 0 1 0.6 0.4000000000000001 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="Q_name">
+			<state id="true" />
+			<state id="false" />
+			<parents>Status_health_name Fly_in_Person_name Infected_name</parents>
+			<probabilities>1 0 0.9 0.09999999999999998 1 0 0.7 0.3 1 0 0.6 0.4 1 0 0 1</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.4.4601.0 ACADEMIC" name="Network1" faultnameformat="nodestate">
+			<node id="Status_health_name">
+				<name>Status_health</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>381 133 497 190</position>
+				<barchart active="true" />
+			</node>
+			<node id="Officer_name">
+				<name>Officer</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>469 12 601 103</position>
+				<barchart active="true" />
+			</node>
+			<node id="View_Officer_name">
+				<name>View_Officer</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>234 132 343 189</position>
+				<barchart active="true" />
+			</node>
+			<node id="Quarantine_Person_name">
+				<name>Quarantine_Person</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>583 175 709 238</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Fly_in_Person_name">
+				<name>Fly_in_Person</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>608 300 688 350</position>
+				<barchart active="true" width="128" height="64" />
+			</node>
+			<node id="Infected_name">
+				<name>Infected</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>833 25 955 109</position>
+				<barchart active="true" />
+			</node>
+			<node id="Q_name">
+				<name>Confirm_Quarantine</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="8" />
+				<position>591 457 718 504</position>
+				<barchart active="true" />
+			</node>
+		</genie>
+	</extensions>
+</smile>
